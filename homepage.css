@@ -1,0 +1,104 @@
+body{
+  
+  background-color: #7B68EE;
+}
+.logo{
+  text-align: center;
+  font-family: Allura;
+  
+    
+
+}
+.roundlogo{
+  border-radius: 50%;
+
+}
+.title{
+  color: #330033;
+
+
+}
+p{
+  font-family: Italianno;
+  font-size: 30px;
+  text-align: center;
+
+}
+div.scrollmenu {
+  background-color: #7B68EE;
+  white-space: nowrap;
+  position: fixed;
+  top: 0; 
+  width: 100%; 
+  bottom-border: 2px solid #4B0082;
+  border-bottom: 2px solid #4B0082;
+}
+
+div.scrollmenu a {
+	
+  display: inline-block;
+  color: black;
+  font-weight: bolder;
+  padding: 14px;
+  text-decoration: none;
+  float: right;
+
+}
+div.scrollmenu a:hover {
+  background-color: #4B0082;
+  font-style: italic;
+}
+h1{
+  font-family: Italianno;
+  font-size: 60px;
+  text-align: center;
+
+}
+.title{
+  color: #330033;
+  font-family: Italianno;
+  font-size: 30px;
+  text-align: center;
+
+}
+a.scrollmenu{
+  font-family: Times Roman;
+  font-size: 20px;
+  font-style: italic;
+}
+.welcome{
+    margin:auto;
+    margin-top: 20px;
+    overflow: scroll;
+  height: 600px;
+  width: 960px;
+  background-image: url("background3.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+    border-radius: 2.5%;
+
+
+}
+.button {
+  background-color: #BA55D3; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 2px solid #191970;
+  color: #191970;
+}
+.button:hover {
+  background-color: #4B0082; 
+  color: white;
+  border: 2px solid #191970;
+}
+li{
+  text-align: center;
+  font-size: 20px;
+  font-color: #191970;
+  
+
+}
