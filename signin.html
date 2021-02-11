@@ -4,6 +4,7 @@
 	<title>Sign In page</title>
 	<link rel="stylesheet" type="text/css" href="signup.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Italianno">
+  
 </head>
 <body>
  
@@ -19,9 +20,9 @@
 
 	<h1><strong>Sign In</strong> </h1>
 	
-		 <form>
+		 <form method="post" action="http://localhost/Lab1/index.php">
        <ul style="list-style-type:none;">
-
+      <input type="hidden" name="event" value="login" >
        <li>
             <label for="cemail"><strong>Email</strong></label><br>
             <input type="Email" name="cemail" id="cemail" size="30px" >
@@ -43,7 +44,7 @@
              
                <div style="text-align:center;">
                  
-                  <a href="homepage.html" class="button" > <strong>Sign In</strong></a>
+                  <button type="submit" name="register" class="button"><strong>Sign In</strong></button>
     
              </div>
 
