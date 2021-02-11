@@ -16,10 +16,10 @@
 	<h1 class="title"><strong>Palala Dancers</strong> </h1>
 	<h1><strong>Sign Up</strong> </h1>
 	
-		 <form  method="post">
+		 <form method="post" action="http://localhost/Lab1/index.php">
        <ul style="list-style-type:none;">
        
-
+       <input type="hidden" name="event" value="register" >
        <li>
            <label for="fname"><strong>First name</strong></label><br>
            <input type="text" name="fname" id="fname" size="30px">
@@ -74,7 +74,8 @@
                <div style="text-align:center;">
                  
                  
-                  <a href="signin.html" class="button" > <strong>Sign Up</strong></a>
+                  
+                  <button type="submit" name="register" class="button"><strong>Sign Up</strong></button>
     
              </div>
 
