@@ -4,8 +4,16 @@
      $con = new DBConnector();
      $pdo = $con->connectToDB();
      $event = $_POST['event']; 
+
+     $errors = array();      
+     $data = array();      
+
+
      if($event == "register"){ 
-            //register     
+           
+
+
+
             $firstName = $_POST['fname'];
             $lastName = $_POST['lname'];  
             $clientEmail = $_POST['cemail'];  
@@ -20,15 +28,24 @@
             $user->setProfPic($profPic); 
             $user->setPassword($password);
 
-            echo $user->register($pdo);    
+            echo $user->register($pdo); 
+            
+            
+            
         }
-        else {   
+        else if ($event=='login'){   
              //login 
+                     
+
                      $clientEmail = $_POST['cemail'];
                      $password = $_POST['psd'];  
                      $user = new User($clientEmail, $password); 
                      $user->getClientEmail($clientEmail); 
                      $user->getPassword($password);
-                                         echo $user->login($pdo);    
+                      echo $user->login($pdo);
+
+                       
+                                          
+                                         
  } 
  ?>
