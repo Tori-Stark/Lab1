@@ -66,30 +66,17 @@ class User {
                     $stmt = $pdo->prepare("SELECT userPassword FROM user WHERE email=?");    
                     $stmt->execute([$this->clientEmail]);   
                     $row = $stmt->fetch();   
-                       if(email == '' || password == ''){
-                      $('.msg').text('Please fill the form');
-                          }
-                    if($row == null){  
-        	               $('.msg').text('Please fill the form');       
-                      }               
-            //         if (password_verify($this->password,$row['userPassword'])){
-            //           	   $url = "homepage.html";
-            //                header("Location: $url");  
-          	 //          } 
-          	 //          else{           
-          	 //        echo "<script language='javascript'>
-            //         alert('⚠Wrong Password. Try Again');
-            //         window.location.href = 'signin.html'; 
-            //         </script>";  
-            //         if(email == '' || password == ''){
-            //     $('.msg').text('Please fill the form');
-            // }          
-                //jQuery ajax post method with 
-                 if ($.post(password_verify($this->password,$row['userPassword'])){
-                    
-                    }else{
-                        $('.msg').html('Invalid Email or Password'); 
-                     }
+                                    
+                    if (password_verify($this->password,$row['userPassword'])){
+                      	   $url = "homepage.html";
+                           header("Location: $url");  
+          	          } 
+          	          else{           
+          	        echo "<script language='javascript'>
+                    alert('⚠Wrong Password. Try Again');
+                    window.location.href = 'signin.html'; 
+                    </script>";  
+            }
           	    } catch (PDOException $e) { 
           	        return $e->getMessage();    
               	     }   
