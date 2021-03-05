@@ -33,6 +33,19 @@
             
             
         }
+         else if($event == "changepassword"){ 
+           
+            $password = $_POST['psd'];  
+            $newpassword = $_POST['psd1'];    
+               
+            
+            $user->setNewPassword($newpassword);
+
+            echo $user->register($pdo); 
+            
+            
+            
+        }
         else if ($event=='login'){   
              //login 
                      
