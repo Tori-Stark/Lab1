@@ -1,7 +1,7 @@
 <?php 
 include_once 'user.php';
     include_once 'dbconnect.php';   
-class User {  
+class User implements Account {  
       //properties      
                
          
@@ -11,6 +11,7 @@ class User {
            protected $City     ;
            protected $profPic   ;  
            protected $password   ; 
+           protected $newpassword;
                  //class constructor  
          function __construct($clientEmail, $password){   
             $this->clientEmail =$clientEmail;   
@@ -34,13 +35,17 @@ class User {
           	      }  
           	      public function setPassword ($pass){ 
            	$this->password = $pass;  
-          	      }      	          
+          	      }  
+          	      public function setNewPassword ($newpass){ 
+           	$this->newpassword = $newpass;  
+          	      }     	          
             public function getClientEmail (){  
                return $this->clientEmail;
         	      } 
         	 public function getPassword (){  
                return $this->password;
-        	      }      
+        	      } 
+        	          
   /**    
       * Create a new user       
        * @param Object PDO Database connection handle        * 
@@ -81,5 +86,31 @@ class User {
           	        return $e->getMessage();    
               	     }   
           }  
+          public function changePassword($pdo){
+				    $newpasswordHash = password_hash($this->newpassword,PASSWORD_DEFAULT);
+				    $passwordHash = password_hash($this->password,PASSWORD_DEFAULT); 
+				    if (password_verify($this->password,$row['userPassword'])){
+				          try{ 
+
+				            $stmt = $pdo->prepare("UPDATE user SET userPassword WHERE email=?"); 
+				            $stmt->execute([$newpasswordHash]);   
+                            $row = $stmt->fetch();
+				           
+				            $url = "homepage.html";
+                             header("Location: $url");
+				        } catch (PDOException $e) {
+				            echo $e->getMessage();
+				        }
+				    }else{
+				        echo "fail";
+				    }       
+				    
+				}
+          public function logout ($pdo){         
+              
+          session_unset();
+           session_destroy();
+           $url = "signin.html";
+            header("Location: $url")
 }
 ?>
